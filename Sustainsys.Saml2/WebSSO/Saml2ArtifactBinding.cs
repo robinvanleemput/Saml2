@@ -111,7 +111,7 @@ namespace Sustainsys.Saml2.WebSso
 
             var response = Saml2SoapBinding.SendSoapRequest(payload, arsUri, clientCertificates);
 
-            options.SPOptions.Logger.WriteVerbose("Artifact resolved returned\n" + response);
+            options.SPOptions.Logger.WriteVerbose("Artifact resolved returned\n" + response.OuterXml);
 
             return new Saml2ArtifactResponse(response).GetMessage();
         }
